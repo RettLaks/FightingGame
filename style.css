@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+* {
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', Courier, monospace;
+
+}
+#playerHealth {
+    position: absolute;
+    background: #818CF8;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /* left: 0; */
+    width: 100%;
+}
+#playerHealthBackground {
+    background-color: red;
+    height: 40px;
+    width: 100%;
+}
+#playerHealthMain {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    border: 5px solid white;
+    border-right: none;
+}
+#timerContainer {
+    background-color: black;
+    height: 80px;
+    width: 100px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 5px solid white;
+}
+#enemyHealthMain {
+    width: 100%;
+    position: relative;
+    border: 5px solid white;
+    border-left: none;
+}
+#enemyHealthBackground {
+    background-color: red;
+    height: 40px;
+}
+#container {
+    position: relative;
+    display: inline-block;
+}
+#smallContainer {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 20px;
+}
+#enemyHealth {
+    position: absolute;
+    background: #818CF8;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+#result {
+    position: absolute;
+    color: black;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+}
+#powerUpTimer {
+    color: white;
+}
+#timer {
+    color: white;
+}
+#restart {
+    position: absolute;
+    margin-left: 50px;
+    height: 576px;
+    width: 300px;
+    background-color: lightcoral;
+    border-radius: 20px;
+}
