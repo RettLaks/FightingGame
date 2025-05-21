@@ -19,20 +19,31 @@ function winnerWinnerChickenDinner({player, enemy, timerId}) {
     }
 }
 
-
-let timer = 30
-let timerId
-function decreaseTimer() {
+const once = fn => {
+    let called = false;
+  
+    return function(...args) {
+      if (called) return;
+      called = true;
+      return fn.apply(this, args);
+    };
+  };
+  
+  const decreaseTimer = function() {
     if (timer > 0) {
         timerId = setTimeout(decreaseTimer, 1000)
         timer--;
     }
-
+    
+    
     if (timer == 0) {
         winnerWinnerChickenDinner({player, enemy, timerId})
+        canTime = true;
     }
-    
-}
+  };
+
+let timer = 30;
+let timerId;
 
 let powerUpTimer = 3;
 let powerUpTimerId
@@ -44,27 +55,3 @@ function decreasePowerUpTimer() {
     }
     
 }
-document.querySelector("#restart").addEventListener("click", function () {
-    timer = 30;
-    player.position.x = 0
-    player.position.y = 10
-    player.health = 100
-    document.getElementById("playerHealth").style.width = player.health + '%'
-    player.dead = false
-    player.switchSprite('idle')
-    player.framesCurrent = 1
-    player.canDie = false
-
-
-    enemy.position.x = 1000
-    enemy.position.y = 10
-    enemy.health = 100
-    document.getElementById("enemyHealth").style.width = enemy.health + '%'
-    enemy.switchSprite('idle')
-    enemy.dead = false
-    enemy.framesCurrent = 0
-
-    document.getElementById("result").innerHTML = ''
-
-    decreaseTimer()
-})
